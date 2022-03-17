@@ -45,7 +45,8 @@ class DLO:
 
         login_rq = self.make_request(self.SIGN_IN_PATH + form_action_path, 'post', {
             'UserName': username,
-            'Password': password
+            'Password': password,
+            'AuthMethod': 'FormsAuthentication'
         })
 
         surfconext_form_action = re.search("action=\"(.*?)\">", login_rq)
